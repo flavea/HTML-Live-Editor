@@ -1,0 +1,221 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44755840-3"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-44755840-3');
+    </script>
+
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+
+    <title>HTML Live Editor</title>
+    <meta name="description"
+        content="HTML live editor and preview, see your code result real-time. Inclused simple HTML wywsig, beautify, and minify HTML..">
+    <link rel="canonical" href="https://html.ilma.dev/" />
+    <link rel="icon" href="icons/icon-128x128.png">
+
+    <meta itemprop="name" content="HTML Live Editor">
+    <meta itemprop="description"
+        content="HTML live editor and preview, see your code result real-time. Inclused simple HTML wywsig, beautify, and minify HTML.">
+    <meta name="keywords"
+        content="HTML, live preview, live editor, HTML live editor, HTML wywsig, HTML editor, HTML, html beautifier, html minifier, html prettifier, beautifier, minifier, uglify">
+    <meta itemprop="image" content="icons/icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#82bbb8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="HTML Live Editor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HTML Live Editor">
+
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png>
+    <link rel=" apple-touch-icon" sizes="72x72" href="icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
+
+    <meta name="msapplication-TileImage" content="icons/icon-192x192.png">
+    <meta name="msapplication-TileColor" content="#82bbb8">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <meta property="og:site_name" content="HTML Live Editor">
+    <meta property="og:url" content="https://html.ilma.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HTML Live Editor">
+    <meta property="og:description"
+        content="HTML live editor and preview, see your code result real-time. Inclused simple HTML wywsig, beautify, and minify HTML.">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/ilma/image/upload/v1596835737/icon-192x192_huhwtm.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@iarifiany">
+    <meta name="twitter:creator" content="@iarifiany">
+    <meta name="twitter:url" content="https://html.ilma.dev">
+    <meta name="twitter:title" content="HTML Live Editor">
+    <meta name="twitter:description"
+        content="HTML live editor and preview, see your code result real-time. Inclused simple HTML wywsig, beautify, and minify HTML.">
+    <meta name="twitter:image"
+        content="https://res.cloudinary.com/ilma/image/upload/v1596835737/icon-192x192_huhwtm.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="css/fa.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code|Roboto">
+    <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+    <script src="scripts/less.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="switch-mode">
+            <button id="editor-switch" class="tabOpen" onclick="editor.openTab('editor-switch')">Editor</button>
+            <button id="preview-switch" onclick="editor.openTab('preview-switch')">See Preview</button>
+        </div>
+        <div id="editor" class="flex">
+            <div id="left">
+                <div id="buttons">
+                    <div>
+                        <button class="new-draft" onclick="modal.open('menu')" title="Bold"><i class="fas fa-bars"></i>
+                            MENU</button>
+                        <button onclick="parser.prettify()" title="Horizontal rule">Prettify</button>
+                        <button onclick="parser.minify()" title="Horizontal rule">Minify</button>
+                        <button class="fas fa-bold" onclick="editor.apply('b')" title="Bold"></button>
+                        <button class="fas fa-italic" onclick="editor.apply('i')" title="Italic"></button>
+                        <button class="fas fa-strikethrough" onclick="editor.apply('s')" title="Strikethrough"></button>
+                        <button class="fas fa-underline" onclick="editor.apply('u')" title="Underline"></button>
+                        <button class="fas fa-level-down-alt" onclick="editor.apply('br', true)"
+                            title="Horizontal rule"></button>
+                        <button class="fas fa-align-center" onclick="editor.apply('center')" title="Center"></button>
+                        <button class="fas fa-list" onclick="editor.apply('ul')" title="List Opener"></button>
+                        <button onclick="editor.apply('li')" title="List Points">●</button>
+                        <button class="fas fa-code" onclick="editor.apply('code')" title="Code"></button>
+                        <button class="fas fa-link" onclick="editor.apply('a')" title="Link"></button>
+                        <button class="fas fa-superscript" onclick="editor.apply('sup')" title="Superscript"></button>
+                        <button class="fas fa-subscript" onclick="editor.apply('sub')" title="Subscript"></button>
+                        <button class="fas fa-heading" onclick="editor.apply('heading')" title="Heading"></button>
+                        <button onclick="editor.apply('img')" title="Image">IMG</button>
+                        <button onclick="editor.apply('hr', true)" title="Horizontal rule">—</button>
+                    </div>
+                </div>
+                <div id="input"></div>
+                <div id="stats">
+                    <div class="flex">
+                        <a class="s-button flex" onclick="modal.open('info')"><i class="fas fa-info-circle"></i>
+                            info</a>
+                        <a class="s-button flex" href="https://w3schools.com/cssref/"><i class="fas fa-info-circle"></i>
+                            CSS reference</a>
+                        <a class="s-button flex" href="https://htmlreference.io/"><i class="fas fa-info-circle"></i>
+                            HTML reference</a>
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <div id="output"></div>
+            </div>
+        </div>
+
+    </div>
+    <div id="menu" class="modal">
+        <div class="menu-content">
+            <div class="modal-close fas fa-times" onclick="modal.close()"></div>
+            <button class="new-draft-button" onclick="editor.new()"><i class="fas fa-file"></i> NEW DRAFT</button>
+            <button class="new-draft-button" onclick="editor.saveFile()"><i class="fas fa-file-export"></i> SAVE AS
+                FILE</button>
+            <button class="new-draft-button" onclick="editor.file.click()"><i class="fas fa-file-import"></i> OPEN
+                FILE</button>
+            <div style="display:none"><input type="file" id="file" accept=".html"></div>
+            <div id="drafts-list"></div>
+        </div>
+    </div>
+    <div id="info" class="modal flex">
+        <div class="modal-content">
+            <div class="modal-close fas fa-times" onclick="modal.close()"></div>
+            <div class="modal-title">
+                Info
+            </div>
+            <ul>
+                <li>Site created by <a href="https://ilma.dev">Ilma.</a></li>
+                <li>Using <a href="https://ace.c9.io/">Ace Code Editor</a>, <a
+                        href="https://github.com/beautify-web/js-beautify/">js-beautify</a>, and <a
+                        href="https://github.com/kangax/html-minifier">html-minifier</a>.</li>
+                <li>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                        href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>.</li>
+            </ul>
+            <center><b><u><a href="https://github.com/flavea/HTML-Live-Editor">Contribute on Github</a></u></b>
+            </center>
+        </div>
+    </div>
+    <div id="update" class="modal flex">
+        <div class="modal-content">
+            <div class="modal-close fas fa-times" onclick="modal.close()"></div>
+            <div class="modal-title">
+                New Update!
+            </div>
+            Please click below button to update:
+
+            <button id="reload">Update</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-minifier/4.0.0/htmlminifier.min.js"></script>
+    <script src="scripts/ace/ace.js"></script>
+    <script src="scripts/ace/ext-language_tools.js"></script>
+    <script src="scripts/parser.js"></script>
+    <script src="scripts/editor.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/beautify.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.9/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.11.0/beautify-html.min.js"></script>
+    <script>
+        parser.init()
+        editor.init()
+
+        let newWorker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration
+                        .scope)
+                    registration.addEventListener('updatefound', () => {
+                        newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            switch (newWorker.state) {
+                                case 'installed':
+                                    if (navigator.serviceWorker.controller) {
+                                        modal.open('update')
+                                    }
+                                    break
+                            }
+                        })
+                    })
+                }).catch((err) => console.log('ServiceWorker registration failed: ', err))
+            })
+        }
+
+        let refreshing;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshing) return
+            window.location.reload()
+            refreshing = true
+        })
+
+        document.getElementById('reload').addEventListener('click', () => {
+            newWorker.postMessage({
+                action: 'skipWaiting'
+            })
+        })
+    </script>
+</body>
+
+</html>
