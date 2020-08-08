@@ -116,6 +116,7 @@ const editor = {
                         }
                         reader.addEventListener('load', function (e) {
                             window.editor.setValue(e.target.result)
+                            window.editor.focus()
                             history.pushState('', "HTML Editor and Instant Preview", "?id=" + fname)
                             parser.render()
                             modal.close()

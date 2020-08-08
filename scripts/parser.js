@@ -63,6 +63,7 @@ const parser = {
             "useShortDoctype": true
         })
         window.editor.setValue(minified)
+        window.editor.focus()
     },
     prettify: function () {
         const prettified = html_beautify(window.editor.getValue(), {
@@ -86,6 +87,7 @@ const parser = {
             "unformatted": []
         })
         window.editor.setValue(prettified)
+        window.editor.focus()
     },
     init: function () {
         const url = new URLSearchParams(window.location.search)
@@ -123,5 +125,6 @@ const parser = {
         window.editor = textEditor
 
         textEditor.setValue(initialContent)
+        textEditor.focus()
     }
 }
