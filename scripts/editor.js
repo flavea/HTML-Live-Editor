@@ -32,12 +32,12 @@ const editor = {
         let id = 'html-' + parser.uuid()
         parser.output.innerHTML = ''
         localStorage.setItem(id, '')
-        history.pushState('', "HTML Live Editor", "?id=" + id)
+        history.pushState('', "HTML Editor and Instant Preview", "?id=" + id)
         window.editor.setValue('<b>Hey!</b>')
         modal.close()
     },
     open: function (key) {
-        history.pushState('', "HTML Live Editor", "?id=" + key)
+        history.pushState('', "HTML Editor and Instant Preview", "?id=" + key)
         parser.render(true)
         modal.close()
     },
@@ -67,7 +67,7 @@ const editor = {
             } else if (url.get('id') === key) {
                 const temp = drafts.filter(d => d != key)[0]
                 window.editor.getValue(localStorage.getItem(temp))
-                history.pushState('', "HTML Live Editor", "?id=" + temp)
+                history.pushState('', "HTML Editor and Instant Preview", "?id=" + temp)
             }
             parser.render({})
         }
@@ -116,7 +116,7 @@ const editor = {
                         }
                         reader.addEventListener('load', function (e) {
                             window.editor.setValue(e.target.result)
-                            history.pushState('', "HTML Live Editor", "?id=" + fname)
+                            history.pushState('', "HTML Editor and Instant Preview", "?id=" + fname)
                             parser.render()
                             modal.close()
                         });

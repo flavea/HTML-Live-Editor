@@ -1,4 +1,4 @@
-# HTML Live Editor
+# HTML Editor and Instant Preview
 
 **Current Features**
 * Live preview

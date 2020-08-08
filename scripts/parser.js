@@ -22,7 +22,7 @@ const parser = {
         parser.output.innerHTML = content
 
         localStorage.setItem(id, content)
-        history.pushState('', "HTML Live Editor", "?id=" + id)
+        history.pushState('', "HTML Editor and Instant Preview", "?id=" + id)
         if (typeof type === 'object') editor.setDrafts(true)
     },
     uuid: function () {
@@ -97,7 +97,7 @@ const parser = {
         } else if (url.has('id')) {
             const id = url.get('id')
             initialContent = localStorage.getItem(id)
-            history.replaceState('', "HTML Live Editor", "?id=" + id)
+            history.replaceState('', "HTML Editor and Instant Preview", "?id=" + id)
         }
 
         localStorage.removeItem('content')
